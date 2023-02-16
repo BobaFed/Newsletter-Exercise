@@ -1,0 +1,5 @@
+.vscode
+apikey.js
+config.js
+node_modules
+.env
