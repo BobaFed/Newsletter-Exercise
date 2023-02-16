@@ -13,8 +13,8 @@ app.use(express.static("public")); // we can use static files relative to url
 app.use(express.urlencoded({extended: true})); // we gain access to body parser
 
 mailChimp.setConfig({
-    apiKey: process.env.MY_API_KEY,
-    server: process.env.MY_SERVER,
+    apiKey: secrets.MY_API_KEY,
+    server: secrets.MY_SERVER,
 });
 
 
@@ -30,7 +30,7 @@ app.post("/", function (req, res) {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const email = req.body.email;
-    const listId = process.env.MY_LIST_ID;
+    const listId = secrets.MY_LIST_ID;
 
     async function run() {
         try {
