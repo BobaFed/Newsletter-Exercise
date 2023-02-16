@@ -1,14 +1,11 @@
 const express = require("express");
-require("dotenv").config();
+require("dotenv").config(); // to get stuff from .env file
 //const https = require("https");
 // require("body-parser") express has its own as of now
 // intent was to use Heroku but that shit expensive
 // so we instead use Railway i guess
 // we also use Mailchimp
 const mailChimp = require("@mailchimp/mailchimp_marketing");
-
-//let myApiKey = process.env.API_KEY;
-//let myServer = process.env.SERVER;
 
 // starting express 
 const app = express();
@@ -60,5 +57,5 @@ run();
 
 app.listen(process.env.PORT || 3000, function() {
     // process.env.PORT so we can host on a server :D
-    console.log("Server running!");
+    console.log("Server running at " + process.env.PORT);
 });
